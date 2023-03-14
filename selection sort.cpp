@@ -1,14 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
-int main()
+void swap(int *a,int *b)
 {
-    int n,i,j,k,min;
-    cin>>n;
-    int a[n];
-    for(i=0 ; i<n ; i++)
-    {
-        cin>>a[i];
-    }
+    *a=*a+*b;
+    *b=*a-*b;
+    *a=*a-*b;
+}
+void sel_sort(int a[],int n)
+{
+    int i,j,min;
     for(i=0 ; i<(n-1) ; i++)
     {
         min=i;
@@ -21,9 +21,20 @@ int main()
         }
         if(min != i)
         {
-            swap(a[i],a[min]);
+            swap(&a[min],&a[i]);
         }
     }
+}
+int main()
+{
+    int n,i;
+    cin>>n;
+    int a[n];
+    for(i=0 ; i<n ; i++)
+    {
+        cin>>a[i];
+    }
+    sel_sort(a,n);
     for(i=0 ; i<n ; i++)
     {
         cout<<a[i]<<" ";
