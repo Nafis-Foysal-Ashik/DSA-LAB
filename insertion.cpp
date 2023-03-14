@@ -9,7 +9,7 @@ void swap(int &a,int &b)
 void inst_sort(int a[],int n)
 {
     int i,j;
-    for(i=0 ; i<n ; i++)
+    for(i=1 ; i<n ; i++)
     {
         int temp=a[i];
         j=i-1;
